@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Traffic Analysis Report - May 2025</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2E86C1;
+            padding-bottom: 20px;
+        }
+        h1 {
+            color: #2E86C1;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #3498DB;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #5D6D7E;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .highlight {
+            background-color: #FFFDE7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Network Traffic Analysis Report</h1>
+        <p><strong>Date:</strong> May 10, 2025</p>
+        <p><strong>Prepared by:</strong> Abdallah Mohammed Hejazi</p>
+        <p><strong>ID:</strong> 2205228</p>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>This report analyzes the network traffic logs from May 17, 2015 to May 20, 2015, to identify patterns, anomalies, and potential areas for improvement. The dataset includes 10,000 requests from 1,753 unique IP addresses, with a focus on request types, failure rates, and security considerations. Key findings include high traffic from specific IPs, peak usage hours, and recurring error codes. Recommendations are provided to optimize performance and enhance security.</p>
+
+    <h2>2. Key Findings</h2>
+
+    <h3>2.1 Request Overview</h3>
+    <ul>
+        <li><strong>Total Requests:</strong> 10,000</li>
+        <li><strong>GET Requests:</strong> 9,952 (99.52%)</li>
+        <li><strong>POST Requests:</strong> 5 (0.05%)</li>
+        <li><strong>Unique IP Addresses:</strong> 1,753</li>
+    </ul>
+
+    <h3>2.2 Top Requesting IPs</h3>
+    <p>The following IPs exhibited unusually high request volumes, suggesting potential bot activity or scraping attempts:</p>
+    <table>
+        <tr>
+            <th>IP Address</th>
+            <th>Requests</th>
+            <th>Request Type</th>
+        </tr>
+        <tr>
+            <td>66.249.73.135</td>
+            <td>482</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>46.105.14.53</td>
+            <td>364</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>130.237.218.86</td>
+            <td>357</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>75.97.9.59</td>
+            <td>273</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>50.16.19.13</td>
+            <td>113</td>
+            <td>GET</td>
+        </tr>
+    </table>
+
+    <h3>2.3 Failure Analysis</h3>
+    <ul>
+        <li><strong>Total Failed Requests (4xx/5xx):</strong> 220 (2.00% failure rate)</li>
+        <li><strong>Most Common Errors:</strong>
+            <ul>
+                <li><span class="highlight">404 (Not Found):</span> 213 requests</li>
+                <li><span class="highlight">500 (Internal Server Error):</span> 3 requests</li>
+                <li><span class="highlight">416 (Range Not Satisfiable):</span> 2 requests</li>
+                <li><span class="highlight">403 (Forbidden):</span> 2 requests</li>
+            </ul>
+        </li>
+        <li><strong>Peak Failure Days:</strong>
+            <ul>
+                <li>May 19, 2015: 66 failures</li>
+                <li>May 18, 2015: 66 failures</li>
+                <li>May 20, 2015: 58 failures</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.4 Hourly Traffic Patterns</h3>
+    <table>
+        <tr>
+            <th>Hour</th>
+            <th>Requests</th>
+            <th>Traffic Level</th>
+        </tr>
+        <tr>
+            <td>14:00 (2 PM)</td>
+            <td>498</td>
+            <td>Peak</td>
+        </tr>
+        <tr>
+            <td>15:00 (3 PM)</td>
+            <td>496</td>
+            <td>Peak</td>
+        </tr>
+        <tr>
+            <td>13:00 (1 PM)</td>
+            <td>475</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>08:00 (8 AM)</td>
+            <td>345</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <td>22:00 (10 PM)</td>
+            <td>346</td>
+            <td>Low</td>
+        </tr>
+    </table>
+
+    <h3>2.5 Status Code Breakdown</h3>
+    <table>
+        <tr>
+            <th>Status Code</th>
+            <th>Count</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>9,126</td>
+            <td>OK</td>
+        </tr>
+        <tr>
+            <td>304</td>
+            <td>445</td>
+            <td>Not Modified</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>213</td>
+            <td>Not Found</td>
+        </tr>
+        <tr>
+            <td>301</td>
+            <td>164</td>
+            <td>Moved Permanently</td>
+        </tr>
+    </table>
+
+    <h2>3. Recommendations</h2>
+
+    <h3>3.1 Security Enhancements</h3>
+    <ul>
+        <li><strong>Investigate Suspicious IPs:</strong> The top 5 IPs with excessive requests should be reviewed for potential malicious activity (e.g., scraping, DDoS attempts). Consider implementing rate limiting or IP blocking.</li>
+        <li><strong>Monitor POST Requests:</strong> Only 5 POST requests were logged, but 3 originated from the same IP (<code>78.173.140.106</code>). Validate their legitimacy.</li>
+    </ul>
+
+    <h3>3.2 Performance Optimization</h3>
+    <ul>
+        <li><strong>Scale Resources During Peak Hours:</strong> Allocate additional server capacity between 12:00 PM and 5:00 PM to handle high traffic volumes.</li>
+        <li><strong>Address 404 Errors:</strong> Investigate broken links or misconfigured endpoints causing 213 "Not Found" errors.</li>
+    </ul>
+
+    <h3>3.3 Failure Mitigation</h3>
+    <ul>
+        <li><strong>Debug 500 Errors:</strong> The 3 internal server errors indicate potential backend issues. Review server logs for root causes.</li>
+        <li><strong>High-Failure Days:</strong> May 19 and 18 had the most failures. Correlate with deployment logs or external events (e.g., attacks).</li>
+    </ul>
+
+    <h3>3.4 Monitoring Improvements</h3>
+    <ul>
+        <li><strong>Real-Time Alerts:</strong> Set up alerts for unusual request spikes (e.g., >300 requests from a single IP).</li>
+        <li><strong>Error Tracking:</strong> Use tools like Splunk or ELK to automate error logging and analysis.</li>
+    </ul>
+
+    <h2>4. Conclusion</h2>
+    <p>The log analysis highlights critical areas for improving security, performance, and reliability. Proactive measures—such as IP monitoring, resource scaling, and error resolution—can significantly enhance system stability. Further investigation into high-traffic IPs and recurring errors is recommended to mitigate risks.</p>
+
+    <h3>Next Steps:</h3>
+    <ol>
+        <li>Implement rate limiting for suspicious IPs.</li>
+        <li>Schedule a review of 404 errors to fix broken links.</li>
+        <li>Optimize server capacity for peak hours.</li>
+    </ol>
+
+    <div class="footer">
+        <h2>Appendix</h2>
+        <ul>
+            <li><strong>Full IP List:</strong> Available in the raw log file.</li>
+            <li><strong>Hourly/Daily Trends:</strong> See pages 29–30 of the log report.</li>
+        </ul>
+        <p>End of Report</p>
+    </div>
+</body>
+</html>
